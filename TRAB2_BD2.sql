@@ -31,12 +31,21 @@ insert into estoque values (1, ARRAY[(1, 'mouse', 19.99, 'Mouse otico')]::produt
 insert into estoque values (3, ARRAY[(2, 'Filme', 19.99, 'Xmen')]::produto[]);
 
 -- selecao
-select * from produtos where cod_prod = 1 
+select estoque.produtos[1].nome from estoque where cod = 1 
+select estoque.produtos[1].valor from estoque where estoque.produtos[1].nome = 'Vidro' 
+
+--update
+update estoque set produtos[1].nome = 'Vidro' where cod = 2 
+update estoque set produtos[1].valor = 30.12 where cod = 1
 
 --delecao
+delete from estoque where estoque.produtos[1].cod_prod = 1
+
 select * from estoque
 select * from produtos;
 
+
+--
 create type pessoa as (
 	id int,
 	nome varchar(30),

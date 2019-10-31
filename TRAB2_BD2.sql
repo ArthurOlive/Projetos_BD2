@@ -1,8 +1,9 @@
 create domain check_preco as decimal(10,2) check (value > 0);
 
-create type armazem as(
-	cod int,
-	produtos produto[100]	--lista e associação
+create type venda as(
+	cod_venda int,
+	data date,
+	produtos_vendidos produto[]	--lista e associação
 );
 
 create type produto as (
@@ -12,17 +13,33 @@ create type produto as (
 	descricao varchar(200)
 );
 
+create type salgado as (
+	cod_salg int,
+	kg float
+);
 
-create table estoque of armazem(
-	cod primary key
+create table vendas of venda(
+	cod_venda primary key
 )
 
 create table produtos of produto(
 	cod_prod primary key
 );
 
+create table bebidas(
+	cod_bebida int primary key,
+	ml float,
+	marca varchar(30)
+) inherits(produtos);
 
--- inserção
+create table salgados(
+	cod_salg int primary key,
+	kg float
+) inherits(produtos);
+
+
+
+--inserção
 insert into produtos values (1, 'mouse', 19.99, 'Mouse otico');
 insert into produtos values (3, 'Video Games', 19.99, 'Xbox')
 insert into produtos values (2, 'Filme', 19.99, 'Xmen')
@@ -34,7 +51,7 @@ insert into estoque values (3, ARRAY[(2, 'Filme', 19.99, 'Xmen')]::produto[]);
 select * from produtos where cod_prod = 1 
 
 --delecao
-select * from estoque
+select * from vendas_produtos
 select * from produtos;
 
 create type pessoa as (
@@ -42,3 +59,11 @@ create type pessoa as (
 	nome varchar(30),
 	produtos_comprados 
 )
+
+drop table produtos;
+drop table vendas;
+drop table produtos;
+drop table bebidas;
+drop type vendas;
+drop type produto;
+

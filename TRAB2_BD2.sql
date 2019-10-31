@@ -1,5 +1,6 @@
 create domain check_preco as decimal(10,2) check (value > 0);
 
+--Tipos
 create type venda as(
 	cod_venda int,
 	data date,
@@ -13,11 +14,7 @@ create type produto as (
 	descricao varchar(200)
 );
 
-create type salgado as (
-	cod_salg int,
-	kg float
-);
-
+--Tabelas
 create table vendas of venda(
 	cod_venda primary key
 )
@@ -37,8 +34,6 @@ create table salgados(
 	kg float
 ) inherits(produtos);
 
-
-
 --inserção
 insert into produtos values (1, 'mouse', 19.99, 'Mouse otico');
 insert into produtos values (3, 'Video Games', 19.99, 'Xbox')
@@ -48,7 +43,7 @@ insert into estoque values (1, ARRAY[(1, 'mouse', 19.99, 'Mouse otico')]::produt
 insert into estoque values (3, ARRAY[(2, 'Filme', 19.99, 'Xmen')]::produto[]);
 
 -- selecao
-select * from produtos where cod_prod = 1 
+select * from bebidas where cod_prod = 1 
 
 --delecao
 select * from vendas_produtos

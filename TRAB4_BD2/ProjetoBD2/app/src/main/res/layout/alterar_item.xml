@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="415dp"
+        android:layout_height="63dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="@color/Backgrou_appMain"
+        android:text="Cadastro de item"
+        android:textAlignment="center"
+        android:textColor="#ffff"
+        android:textSize="40dp" />
+
+    <Button
+        android:id="@+id/btAlterar"
+        android:layout_width="wrap_content"
+        android:layout_height="101dp"
+        android:layout_below="@+id/desc_alt"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="22dp"
+        android:background="@color/Backgrou_appMain"
+        android:textColor="#ffffff"
+        android:onClick="onClickAltera"
+        android:text="Alterar" />
+
+    <EditText
+        android:id="@+id/nome_alt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="33dp"
+        android:editable="true"
+        android:ems="10"
+        android:hint="Nome produto"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:textColorHint="#D2D2D9" />
+
+    <EditText
+        android:id="@+id/preco_alt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nome_alt"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="28dp"
+        android:ems="10"
+        android:hint="Preco do item"
+        android:inputType="number|numberDecimal"
+        android:textColor="#000000"
+        android:textColorHint="#D2D2D9" />
+
+    <EditText
+        android:id="@+id/desc_alt"
+        android:layout_width="match_parent"
+        android:layout_height="182dp"
+        android:layout_below="@+id/preco_alt"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="25dp"
+        android:ems="10"
+        android:hint="Descrição do item"
+        android:inputType="textMultiLine|textPersonName"
+        android:textColor="#000000"
+        android:textColorHint="#D2D2D9" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titulo"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="50dp"
+        android:text="Codigo:"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/cod_item_alt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titulo"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:layout_toEndOf="@+id/textView3" />
+
+
+</RelativeLayout>

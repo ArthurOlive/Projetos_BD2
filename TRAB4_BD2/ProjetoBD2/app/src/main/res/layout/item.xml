@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/nome_item"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:text="Nome Item"
+        android:textColor="#000000"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/preco_item"
+        android:layout_width="296dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nome"
+        android:layout_alignBottom="@+id/nome_item"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="-24dp"
+        android:layout_toEndOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/desc_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView14"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="42dp" />
+
+    <Button
+        android:id="@+id/atlBt"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_below="@+id/desc_item"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="9dp"
+        android:background="#00a9eb"
+        android:onClick="alterarItem"
+        android:text="Alterar"
+        android:textColor="#ffff" />
+
+    <Button
+        android:id="@+id/remBt"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_alignTop="@+id/textView12"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="142dp"
+        android:layout_marginEnd="9dp"
+        android:background="#e54b4d"
+        android:onClick="removeItem"
+        android:text="Remover"
+        android:textColor="#ffff" />
+
+    <TextView
+        android:id="@+id/cod_item"
+        android:layout_width="298dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/preco_item"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="36dp"
+        android:layout_toEndOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nome_item"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="5dp"
+        android:text="Preco:"
+        android:textColor="#000000"/>
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView12"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="9dp"
+        android:text="Codigo:"
+        android:textColor="#000000"/>
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cod_item"
+        android:layout_alignStart="@+id/nome_item"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="9dp"
+        android:text="Descrição:"
+        android:textColor="#000000"/>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/desc_item"
+        android:layout_alignStart="@+id/textView12"
+        android:layout_alignEnd="@+id/nome_item"
+        android:layout_marginStart="-23dp"
+        android:layout_marginTop="82dp"
+        android:layout_marginEnd="-1dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignStart="@+id/textView12"
+        android:layout_alignTop="@+id/textView12"
+        android:layout_alignEnd="@+id/nome_item"
+        android:layout_marginStart="-20dp"
+        android:layout_marginTop="-29dp"
+        android:layout_marginEnd="-4dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine" />
+
+</RelativeLayout>

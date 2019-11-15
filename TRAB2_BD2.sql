@@ -72,9 +72,9 @@ delete from vendas where cod_venda = 1
 select * from vendas
 select * from produtos;
 
-drop table produtos;
 drop table vendas;
-drop table produtos;
 drop table bebidas;
-drop type vendas;
+drop table salgados;
+drop table produtos;
+drop type venda;
 drop type produto;

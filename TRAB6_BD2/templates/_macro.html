@@ -1,0 +1,2 @@
+{% macro render_field(field)%}
+<label>{{ field.label }} : <p>&nbsp &nbsp   </p> </label> {{ field(**kwargs) | safe}} {% endmacro %}

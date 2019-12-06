@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8" />
+
+<head>
+    <title>{% block title %} {{title}} {% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <h2 style="color:white"> Carrinho de compras</h2>
+    </nav>
+    <br/><br/>
+    <div class="container">
+
+        <h3>Adicionar Item no carrinho</h3>
+        <hr/>
+        <!--Bloco que ira exibir as chaves e valores-->
+        {% block content_1 %} {% from "_macro.html" import render_field %}
+        <form method="POST" class="form-inline">
+            <div class="form-group mb-2">
+                {{render_field(form.key , class = 'form-control', placeholder="Indentificador chave")}}
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                {{render_field(form.value, class = 'form-control', placeholder='Item')}}
+                <button style="margin-left:5px;" class="btn btn-outline-success">Adicionar</button>
+            </div>
+
+
+        </form>
+        {% endblock %}
+        <hr/>
+    </div>
+
+    <!--Recebe a chave e exclui o item da lista-->
+    <div class="container">
+        <h3>Remove um item do carrinho</h3>
+        <hr/>
+        <!--Bloco que ira exibir as chaves e valores-->
+        {% block content_2 %} {% from "_macro.html" import render_field %}
+        <form method="POST" class="form-inline">
+            <div class="form-group mb-2">
+                {{render_field(form_del.key_del , class = 'form-control', placeholder="Indentificador chave")}}
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                {{render_field(form_del.value_del, class = 'form-control', placeholder='Valor')}}
+                <button style="margin-left:5px;" class="btn btn-outline-danger">Remover</button>
+            </div>
+        </form>
+        {% endblock %}
+        <hr/>
+    </div>
+
+    <!--Loop que lista os itens-->
+    <div class="container">
+        <h4>Lista de itens no carrinho</h4>
+        <hr/>
+        <ul class="list-group">
+            {% block lista %} {% for i in range(0, len) %}
+            <li class="list-group-item list-group-item-action list-group-item-light">
+                <h5>{{ keys_lista[i]}} :</h5>
+                <p>{{ values_lista[i] }}</p>
+            </li>
+            {% endfor %} {% endblock %}
+        </ul>
+    </div>
+
+    <hr/>
+
+</body>
+
+</html>
